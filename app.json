@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "CyberPath Tutor",
+    "slug": "cyberpath-tutor",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "cyberpath",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.cyberpathtutor.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "Allow CyberPath Tutor to connect directly to an AI model server on your local network.",
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        }
+      }
+    },
+    "android": {
+      "package": "com.cyberpathtutor.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#061318",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#061318",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 92
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow CyberPath Tutor to hear your practice answers during live tutoring and interviews.",
+          "recordAudioAndroid": true,
+          "enableBackgroundRecording": false
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
